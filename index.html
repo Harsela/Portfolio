@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <style>
+        /* Google Fonts Import */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        
+            color: #333;
+            line-height: 1.6;
+        }
+    
+        header {
+            background: #05908d;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2rem;
+        }
+
+        nav {
+            background: #1c1c1c;
+            color: white;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: #05908d;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        
+        }
+
+        .section {
+            margin: 40px 0;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+          
+        }
+        .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centers content horizontally */
+    justify-content: center;  /* Centers content vertically */
+    text-align: center;  /* Ensures the text inside is centered */
+    padding: 5px;  /* Adds some padding around the content */
+    height: vh;  /* Makes the container take the full height of the viewport */
+}
+
+.about-title {
+    /* Blue background for the title */
+    color: rgb(6, 6, 6); /* White text color */
+    display: inline-block; /* Makes the background fit the text */
+    padding: 5px 10px; /* Small padding around the title */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.8rem; /* Adjusted font size */
+    margin-bottom: 20px;  /* Adds space between the title and the paragraph */
+}
+
+.about p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    width: 80%;  /* Optional: limits the width of the paragraph for better readability */
+}
+
+
+       
+
+       /* Skills Section */
+.skills-container {
+    display: flex;
+    justify-content: center; /* Ensure horizontal alignment */
+    gap: 20px; /* Add spacing between the two boxes */
+    margin-top: 20px;
+}
+
+.skills-box,
+.soft-skills-box {
+    flex: 1; /* Equal width for both boxes */
+    background-color: #f9f9f9; /* Light background for visibility */
+    padding: 10px 15px;
+    border: 1px solid #ddd; /* Subtle border for separation */
+    border-radius: 8px;
+    text-align: left;
+    max-width: 300px;
+   
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for better visuals */
+}
+
+.skills-box h3,
+.soft-skills-box h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.skills-box ul,
+.soft-skills-box ul {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+}
+
+        .education-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust spacing between boxes */
+    gap: 10px; /* Minimal gap between boxes */
+    margin-top: 20px; /* Adds top margin to the container */
+}
+
+.education-box {
+    flex: 1 1 calc(30% - 10px); /* Each box takes 30% of the row width minus gap */
+    background-color: #f9f9f9; /* Light background for visibility */
+    padding: 15px;
+    border: 1px solid #ddd; /* Subtle border for separation */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for better visuals */
+}
+
+@media (max-width: 768px) {
+    .education-box {
+        flex: 1 1 100%; /* Full width for smaller screens */
+    }
+}
+/* Projects Section */
+.projects-container {
+    display: flex; /* Places items side by side */
+    justify-content: space-around; /* Equal spacing between boxes */
+    gap: 0px; /* Spacing between boxes */
+    flex-wrap: wrap; /* Wraps to the next line if screen width is small */
+}
+
+.project {
+    background-color: #f9f9f9; /* Light background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px 20px;
+    width: 100%; /* Ensures side-by-side placement */
+    max-width: 600px; /* Limits the box width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    color: #050505;
+    margin-bottom: 20px;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+
+.certifications-container {
+    display: flex; /* Arrange items side by side */
+    justify-content: space-around; /* Add spacing between items */
+    gap: 20px; /* Space between the certification boxes */
+    flex-wrap: wrap; /* Wrap to the next line if necessary */
+}
+
+.certification {
+    background-color: #f9f9f9; /* Light background */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px 20px;
+    width: 50%; /* Ensures side-by-side placement */
+    max-width: 600px; /* Limits box width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certification h3 {
+    font-size: 1.5rem;
+    color: #050505;
+    margin-bottom: 20px; /* Space between title and content */
+}
+
+.certification:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .certification {
+        width: 100%; /* Full width for smaller screens */
+    }
+}
+
+
+
+.query-text {
+    text-align: center; /* Keeps it visually aligned */
+    margin-right: 20px; /* Moves the text to the left */
+    font-size: 1rem;
+    color: #333;
+    padding: 10px;
+}
+
+
+        footer {
+            background: #1c1c1c;
+            color: white;
+            padding: 20px;
+            
+            text-align: center;
+        }
+
+        footer a {
+            color: #05908d;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Harsela</h1>
+        <p>Software Engineering Graduate | Problem Solver</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <div class="about">
+        <h2 class="about-title">About Me</h2>
+        <p>Hello! I'm a recent engineering graduate with a strong passion for learning and exploring new technologies.My journey in engineering has been marked by hands-on projects that showcase my dedication to innovation.</p>
+    </div>
+    
+    
+        </section>
+
+        <!-- Skills Section -->
+        <!-- Skills and Soft Skills Section -->
+<section id="skills" class="section skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <div class="skills-box">
+            <h3>Technical Skills</h3>
+            <ul>
+                <li>Java</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>C</li>
+            </ul>
+        </div>
+        <div class="soft-skills-box">
+            <h3>Soft Skills</h3>
+            <ul>
+                <li>Stress Management</li>
+                <li>Decision Making</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+        <!-- Education Section -->
+        <!-- Education Section -->
+<section id="education" class="section education">
+    <h2>Education</h2>
+    <div class="education-container">
+        <div class="education-box">
+            <h3>Secondary School Leaving Certificate</h3>
+            <p>RN Oxford Matriculation school,2019</p>
+            <p>Percentage:93.6%</p>
+        </div>
+        <div class="education-box">
+            <h3>Higher Secondary Education</h3>
+            <p>Malar Matric higher secondary school,2021</p>
+            <p>Percentage: 90.5%</p>
+        </div>
+        <div class="education-box">
+            <h3>Bachelor of Engineering</h3>
+            <p>M Kumarasamy College of Engineering,2021-2025</p>
+            <p>Percentage: 77%</p>
+        </div>
+    </div>
+</section>
+
+
+            <!-- Projects Section -->
+<!-- Projects Section -->
+<section id="projects" class="section projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+        <div class="project">
+            <h3>Bluetooth-Based Noticeboard</h3>
+            <p>Bluetooth-Based Wireless Noticeboard is a digital display system using Bluetooth, IoT and Java for real-time wireless message updates. It offers a secure, eco-friendly and user-friendly solution for announcements in schools, offices and public spaces.</p>
+        </div>
+        <div class="project">
+            <h3>Objective-Subjective Portal</h3>
+            <p>Objective-Subjective Portal streamlines the exam process by automating tasks like question paper generation, grading and result processing. Designed for efficiency, it handles both objective and subjective assessments seamlessly. This system reduces manual effort, ensuring accuracy and faster evaluation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<!-- Certifications Section -->
+<section id="certifications" class="section certifications">
+    <h2>Certifications</h2>
+    <div class="certifications-container">
+        <div class="certification">
+            <h3>Associate Cloud Engineer</h3>
+            <p>Google Cloud Certified Associate Cloud Engineer certification, showcasing expertise in deploying, managing and maintaining cloud solutions on Google Cloud Platform.</p>
+        </div>
+        <div class="certification">
+            <h3>IoT Certification</h3>
+            <p>Elite Plus Silver certified IoT course completed, demonstrating in-depth knowledge of IoT systems, architecture and applications.</p>
+        </div>
+    </div>
+</section>
+
+        
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <h2>Contact</h2>
+            <p class="query-text">For any queries, feel free to drop a message at <a href="mailto:harselakavitha841@gmail.com">harselakavitha841@gmail.com</a>.</p>
+
+        </section>
+    </div>
+    
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Harsela.</p>
+        <p><a href="https://github.com/Harsela" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/harsela-s-493851268" target="_blank">LinkedIn</a></p>
+    </footer>
+</body>
+</html>
